@@ -12,12 +12,13 @@ import static ru.netology.data.SQLHelper.cleanDataBase;
 
 public class BankLoginTest {
     @AfterAll
-    static void teardown(){
+    static void teardown() {
         cleanDataBase();
     }
+
     @Test
     @DisplayName("Should successfully login to dashboard with exist login and password from sut test data")
-    void shouldSuccessfulLogin(){
+    void shouldSuccessfulLogin() {
         open("http://localhost:9999", LoginPage.class);
         LoginPage loginPage = new LoginPage();
         var authInfo = DataHelper.getAuthInfoWithTestData();
